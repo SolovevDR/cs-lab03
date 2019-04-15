@@ -1,4 +1,4 @@
-#include "../histogram.h"
+#include "histogram.h"
 
 #include <cassert>
 
@@ -38,10 +38,19 @@ test_one() {
     assert(max == 1);
 }
 
+void
+test_pust() {
+    double min = 0;
+    double max = 0;
+    find_minmax({}, min, max);
+    assert(min == 0);
+    assert(max == 0);
+}
 int main()
 {
        test_positive();
        test_negativ();
        test_odinakov();
        test_one();
+       test_pust();
 }
